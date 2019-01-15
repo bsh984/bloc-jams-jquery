@@ -38,6 +38,20 @@ class Player {
     }
   }
 
+  prettyTime(timeInSeconds) {
+    function pad(num, size) {
+      var s = num + '';
+      while (s.length < size) s = '0' + s;
+      return s;
+    }
+
+    const minutes = pad(Math.floor(timeInSeconds / 60),2);
+    const seconds = pad(Math.floor(timeInSeconds % 60),2);
+
+    const formattedTime = minutes + ':' + seconds;
+    return formattedTime;
+  }
+
   skipTo (percent) {
     if (this.playState !== 'playing') { return }
     this.soundObject.setTime( (percent / 100) * this.soundObject.getDuration() );

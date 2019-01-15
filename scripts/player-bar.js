@@ -41,7 +41,7 @@
     const percent = (currentTime / duration) * 100;
     // const remainingTime = duration - currentTime;
     $('#time-control input').val(percent);
-    $('#time-control .current-time').text(currentTime);
-    // $('#time-control .total-time').text(remainingTime);
+    $('#time-control .current-time').text(player.prettyTime(currentTime));
+    // $('#time-control .total-time').text(duration);
   }, 1000);
 }
